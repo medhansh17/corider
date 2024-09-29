@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import axios from "axios";
+import useOnlineStatus from "../hooks/onlineStatus";
 
 interface Sender {
   image: string;
@@ -31,6 +32,9 @@ const ChatComponent: React.FC = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const lastMessageRef = useRef<HTMLDivElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const isOnline = useOnlineStatus();
+  console.log(isOnline);
+
   let scrolled = false;
 
   const fetchChats = useCallback(
@@ -61,6 +65,18 @@ const ChatComponent: React.FC = () => {
   useEffect(() => {
     fetchChats(0);
   }, [fetchChats]);
+
+  useEffect(() => {
+    if (!isOnline) {
+      alert("You are offline, showing cached chat data");
+      const cachedChatData = localStorage.getItem("chatData");
+      if (cachedChatData) {
+        setChats(JSON.parse(cachedChatData).chats);
+      } else {
+        alert("No cached chat data available.");
+      }
+    }
+  }, [isOnline]);
 
   useEffect(() => {
     const options = {

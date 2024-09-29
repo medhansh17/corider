@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# coRider PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **PWA** was made using the Vite PWA plugin for coRider and built with React and TypeScript. This application enhances the ride-sharing experience by providing a seamless, offline-first interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Fast Performance:** Leveraging Vite for lightning-fast builds and hot module replacement.
+- **Offline Support:** Shows previous fetched messages when offline and a toast to notify the user.
+- **Responsive Design:** Mobile-friendly interface that adapts to various screen sizes.
+  
+## Future Updates
 
-## Expanding the ESLint configuration
+- **Service Worker:** Leverage the Service-Worker file for better offline support and automatic update of PWA on new version releases.
+- **Cache Management:** Better cache management for icons and favicons using the service worker.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Screenshots
 
-- Configure the top-level `parserOptions` property like this:
+| Home Screen | Ride History | User Profile |
+|-------------|--------------|--------------|
+| ![Home Screen](https://github.com/user-attachments/assets/8560553e-4b42-42dd-9004-418613831582) | ![Ride History](https://github.com/user-attachments/assets/d7311336-1c1a-4911-8db3-baa5116b51e3) | ![User Profile](https://github.com/user-attachments/assets/03201ee3-a7a8-41e8-9b08-41ad1ab6f059) |
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Acknowledgements
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Vite PWA](https://vite-plugin-pwa.netlify.app/)

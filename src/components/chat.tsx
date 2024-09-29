@@ -101,7 +101,7 @@ const ChatComponent: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen pt-[125px] pb-[80px]">
+    <div className="flex flex-col h-screen pt-[125px] pb-[80px] sm:px-12">
       <div ref={chatContainerRef} className="flex-1 overflow-y-auto  px-4 py-2">
         {loading && (
           <div className="h-10 flex items-center justify-center">

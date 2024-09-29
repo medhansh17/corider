@@ -1,6 +1,7 @@
 import { IoArrowBackSharp } from "react-icons/io5";
 import { FiEdit } from "react-icons/fi";
 import { HiDotsVertical } from "react-icons/hi";
+import Profile from "../assets/Profile.svg";
 
 interface CHeaderProps {
   tripName: string;
@@ -22,7 +23,7 @@ const CHeader: React.FC<CHeaderProps> = ({ tripName, from, to }) => {
       </div>
       <div className="flex px-2 items-center">
         <span className="w-full pr-2 flex flex-row gap-4">
-          <img src="src/assets/Profile.svg" alt="profile" />
+          <img src={Profile} alt="profile" />
           <span className="flex flex-col ">
             <p>
               <span className="text-base text-gray-600">From</span> {from}
